@@ -13,7 +13,7 @@ function App() {
     setError(null);
     try {
       console.log('Fetching data...');
-      const response = await axios.get('http://localhost:8080/https://pwce3zabo0.execute-api.us-east-1.amazonaws.com/dev/ec2recommendation', {
+      const response = await axios.get('#Your EC2 Recommendation Lambda API', {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
@@ -31,7 +31,7 @@ function App() {
   const handleInstanceMigrate = async (instanceId) => {
     setMigrateLoading((prev) => ({ ...prev, [instanceId]: true }));
     try {
-      const url = `https://pwce3zabo0.execute-api.us-east-1.amazonaws.com/dev/migrate-ec2?InstanceId=${instanceId}`;
+      const url = `#YOUR_RECOMMENDATION_API/dev/migrate-ec2?InstanceId=${instanceId}`;
       window.open(url);
     } catch (err) {
       console.error('Error invoking migrate API:', err);
